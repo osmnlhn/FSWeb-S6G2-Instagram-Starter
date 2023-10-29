@@ -20,10 +20,13 @@ const Gonderi = (props) => {
           src={gonderi.imageUrl}
         />
       </div>
-      {/* BegenBolumu düzgün çalışması için ihtiyaç duyduğu tüm proplara sahip mi? */}
-      <BegenBolumu gonderiyiBegen={() => gonderiyiBegen(gonderi.id)} />
-      {/* Yorumlar da proplara dikkat istiyor! */}
-      <Yorumlar />
+      
+      <BegenBolumu 
+      begeniSayisi={gonderi.likes}
+      gonderiyiBegen={() => gonderiyiBegen(gonderi.id)} 
+      liked={gonderi.liked}
+      />
+      <Yorumlar yorumlar={gonderi.comments}/>
     </div>
   );
 };

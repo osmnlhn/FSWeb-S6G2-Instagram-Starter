@@ -7,20 +7,20 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faComment, faHeart } from "@fortawesome/free-regular-svg-icons";
 
 const BegenBolumu = (props) => {
-  // 🔥 Bu bileşenin parentının aşağıdaki propları düzgün gönderdiğinden emin olun.
-  const { gonderiyiBegen, begeniSayisi } = props;
+
+  const { gonderiyiBegen, begeniSayisi,liked } = props;
 
   return (
     <div>
       <div className="like-section" key="likes-icons-container">
-        <div className="like-section-wrapper">
-          <FontAwesomeIcon icon={faHeart} />
+        <div className="like-section-wrapper" onClick={gonderiyiBegen}  >
+          <FontAwesomeIcon icon={faHeart} color={liked ? 'red':'black'} />
         </div>
         <div className="like-section-wrapper">
-          <FontAwesomeIcon icon={faComment} />
+          <FontAwesomeIcon icon={faComment} color='blue'/>
         </div>
       </div>
-      <p className="like-number">100 likes</p>
+      <p className="like-number">{begeniSayisi} likes</p>
     </div>
   );
 };
